@@ -7,6 +7,7 @@ const hbs = require('hbs');
 
 
 const app = express();
+const port = process.env.PORT || 3000;
 
 // Setting up path to the respective directories
 
@@ -61,4 +62,4 @@ app.get('*', (req, res) => {
     res.render('404', {title: '404 Page Not Found', error: 'Page Not Found'})
 })
 
-app.listen(3000, () => {console.log('listening on port 3000')});
+app.listen(port, () => {console.log(`listening on port ${port}`)});

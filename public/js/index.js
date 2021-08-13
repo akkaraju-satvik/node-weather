@@ -14,7 +14,7 @@ weatherForm.addEventListener('submit', (e) => {
     locationElement.textContent = ''
     temperatureElement.textContent = ''
     feelslikeElement.textContent = ''
-    fetch(`http://127.0.0.1:3000/weather?address=${encodeURIComponent(locationInput.value)}`).then(response => {
+    fetch(`/weather?address=${encodeURIComponent(locationInput.value)}`).then(response => {
         response.json().then(dataJSON => {
             if(dataJSON.error) {    
                 errorELement.textContent = dataJSON.error
