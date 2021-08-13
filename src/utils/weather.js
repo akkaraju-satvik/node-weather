@@ -9,7 +9,7 @@ const weather = function(longitude, latitude, callback) {
             callback(body.error.info, undefined)
         } else {
             const {current: data} = body
-            callback(undefined, {temperature: data.temperature, feelslike: data.feelslike})
+            callback(undefined, {temperature: data.temperature, feelslike: data.feelslike, precipitation: data.precip})
         }
     })
 }

@@ -6,6 +6,7 @@ const errorELement = document.querySelector('#error')
 const temperatureElement = document.querySelector('#temperature')
 const feelslikeElement = document.querySelector('#feelslike')
 const locationElement = document.querySelector('#location')
+const precipitationElement = document.querySelector('#precipitation')
 
 
 weatherForm.addEventListener('submit', (e) => {
@@ -14,6 +15,7 @@ weatherForm.addEventListener('submit', (e) => {
     locationElement.textContent = ''
     temperatureElement.textContent = ''
     feelslikeElement.textContent = ''
+    precipitationElement.textContent = ''
     fetch(`/weather?address=${encodeURIComponent(locationInput.value)}`).then(response => {
         response.json().then(dataJSON => {
             if(dataJSON.error) {    
@@ -23,6 +25,7 @@ weatherForm.addEventListener('submit', (e) => {
                 temperatureElement.textContent = `${dataJSON.temperature}°C`
                 feelslikeElement.textContent = `Feels like ${dataJSON.feelslike}°C`
                 locationElement.textContent = `${dataJSON.location}`
+                precipitationElement.textContent = `Current precipitation is ${dataJSON.precipitation}mm`
             }
         })
     })
