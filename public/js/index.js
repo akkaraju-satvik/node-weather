@@ -1,5 +1,7 @@
 // console.log('Running', document.title)
 
+// HTML Elements
+
 const weatherForm = document.querySelector('form')
 const locationInput = document.querySelector('input')
 const errorELement = document.querySelector('#error')
@@ -8,6 +10,7 @@ const feelslikeElement = document.querySelector('#feelslike')
 const locationElement = document.querySelector('#location')
 const precipitationElement = document.querySelector('#precipitation')
 
+// Event Listener for form submission.
 
 weatherForm.addEventListener('submit', (e) => {
     e.preventDefault()
