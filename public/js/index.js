@@ -1,4 +1,4 @@
-console.log('Running', document.title)
+// console.log('Running', document.title)
 
 const weatherForm = document.querySelector('form')
 const locationInput = document.querySelector('input')
